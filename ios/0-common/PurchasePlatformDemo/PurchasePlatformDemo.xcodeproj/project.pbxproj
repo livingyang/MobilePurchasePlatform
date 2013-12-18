@@ -43,7 +43,10 @@
 		27327BEE186148C600FD2BB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2721832618603E3700BC350D /* Main.storyboard */; };
 		27327C2218614A5F00FD2BB0 /* TBPlatformResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27327C1E18614A5200FD2BB0 /* TBPlatformResource.bundle */; };
 		27327C2318614A6B00FD2BB0 /* TBPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C1D18614A5200FD2BB0 /* TBPlatform.framework */; };
-		27327C2518614A8700FD2BB0 /* PurchasePlatformAdapterTb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27327C2418614A8700FD2BB0 /* PurchasePlatformAdapterTb.cpp */; };
+		27327C2518614A8700FD2BB0 /* PurchasePlatformAdapterTb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27327C2418614A8700FD2BB0 /* PurchasePlatformAdapterTb.mm */; };
+		27327C2718617B5500FD2BB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C2618617B5500FD2BB0 /* MessageUI.framework */; };
+		27327C2F18617BA800FD2BB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C2E18617BA800FD2BB0 /* Security.framework */; };
+		27327C3118617BB400FD2BB0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C3018617BB400FD2BB0 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,7 +148,10 @@
 		27327C1A18614A5200FD2BB0 /* TBPlatform_GameDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = TBPlatform_GameDemo.xcodeproj; sourceTree = "<group>"; };
 		27327C1D18614A5200FD2BB0 /* TBPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TBPlatform.framework; sourceTree = "<group>"; };
 		27327C1E18614A5200FD2BB0 /* TBPlatformResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TBPlatformResource.bundle; sourceTree = "<group>"; };
-		27327C2418614A8700FD2BB0 /* PurchasePlatformAdapterTb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PurchasePlatformAdapterTb.cpp; sourceTree = "<group>"; };
+		27327C2418614A8700FD2BB0 /* PurchasePlatformAdapterTb.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PurchasePlatformAdapterTb.mm; sourceTree = "<group>"; };
+		27327C2618617B5500FD2BB0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		27327C2E18617BA800FD2BB0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		27327C3018617BB400FD2BB0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27327C3118617BB400FD2BB0 /* SystemConfiguration.framework in Frameworks */,
+				27327C2F18617BA800FD2BB0 /* Security.framework in Frameworks */,
+				27327C2718617B5500FD2BB0 /* MessageUI.framework in Frameworks */,
 				27327BE7186148C600FD2BB0 /* CoreGraphics.framework in Frameworks */,
 				27327BE8186148C600FD2BB0 /* UIKit.framework in Frameworks */,
 				27327BE9186148C600FD2BB0 /* Foundation.framework in Frameworks */,
@@ -209,6 +218,9 @@
 		2721831318603E3700BC350D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27327C3018617BB400FD2BB0 /* SystemConfiguration.framework */,
+				27327C2E18617BA800FD2BB0 /* Security.framework */,
+				27327C2618617B5500FD2BB0 /* MessageUI.framework */,
 				2721831418603E3700BC350D /* Foundation.framework */,
 				2721831618603E3700BC350D /* CoreGraphics.framework */,
 				2721831818603E3700BC350D /* UIKit.framework */,
@@ -248,7 +260,7 @@
 			children = (
 				2721834A1860424700BC350D /* PurchasePlatformAdapter.h */,
 				2721834B1860425900BC350D /* PurchasePlatformAdapterStub.cpp */,
-				27327C2418614A8700FD2BB0 /* PurchasePlatformAdapterTb.cpp */,
+				27327C2418614A8700FD2BB0 /* PurchasePlatformAdapterTb.mm */,
 				272183681861386D00BC350D /* PurchasePlatformAdapterPP.mm */,
 			);
 			name = PurchasePlatformAdapter;
@@ -597,7 +609,7 @@
 				27327BE2186148C600FD2BB0 /* ViewController.mm in Sources */,
 				27327BE3186148C600FD2BB0 /* AppDelegate.mm in Sources */,
 				27327BE4186148C600FD2BB0 /* main.m in Sources */,
-				27327C2518614A8700FD2BB0 /* PurchasePlatformAdapterTb.cpp in Sources */,
+				27327C2518614A8700FD2BB0 /* PurchasePlatformAdapterTb.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +800,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/2-tb",
@@ -795,6 +808,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
 				INFOPLIST_FILE = "PurchasePlatformDemo/PurchasePlatformDemo_tb-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = PurchasePlatformDemo_tb;
 				WRAPPER_EXTENSION = app;
 			};
@@ -805,6 +822,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/2-tb",
@@ -812,6 +830,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
 				INFOPLIST_FILE = "PurchasePlatformDemo/PurchasePlatformDemo_tb-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+				);
 				PRODUCT_NAME = PurchasePlatformDemo_tb;
 				WRAPPER_EXTENSION = app;
 			};
