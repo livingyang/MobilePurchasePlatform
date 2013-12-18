@@ -9,4 +9,5 @@ RESTstop.add "get_url", ->
 
 RESTstop.add "display_params", ->
 	console.log @params
+	console.log "call!!"
 

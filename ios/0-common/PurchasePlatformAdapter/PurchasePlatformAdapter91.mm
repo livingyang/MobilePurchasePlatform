@@ -95,7 +95,7 @@ void PurchasePlatformAdapter::purchase(std::string productId)
 {
     cout << "PurchasePlatformAdapter::purchase, productId : " << productId << endl;
     
-    [[NdComPlatform defaultPlatform] NdUniPayForCoin:@"1" needPayCoins:1 payDescription:@"test"];
+    [[NdComPlatform defaultPlatform] NdUniPayForCoin:@"3" needPayCoins:1 payDescription:@"test"];
 }
 
 void PurchasePlatformAdapter::openCenter()

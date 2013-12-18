@@ -63,10 +63,8 @@
 		27327C5718617F8700FD2BB0 /* NDJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C4E18617F8700FD2BB0 /* NDJSON.framework */; };
 		27327C5818617F8700FD2BB0 /* NDUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C4F18617F8700FD2BB0 /* NDUtility.framework */; };
 		27327C5918617F8700FD2BB0 /* NetEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C5018617F8700FD2BB0 /* NetEngine.framework */; };
-		27327C5B18617F8700FD2BB0 /* NdComPlatformInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C5218617F8700FD2BB0 /* NdComPlatformInt.framework */; };
 		27327C5C18617F8700FD2BB0 /* NdComPlatform_SNS_Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27327C5318617F8700FD2BB0 /* NdComPlatform_SNS_Resources.bundle */; };
 		27327C5E18617FE300FD2BB0 /* PurchasePlatformAdapter91.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27327C5D18617FE300FD2BB0 /* PurchasePlatformAdapter91.mm */; };
-		27327C5F1861803A00FD2BB0 /* NdComPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C5118617F8700FD2BB0 /* NdComPlatform.framework */; };
 		27327C611861808200FD2BB0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C601861808200FD2BB0 /* AdSupport.framework */; };
 		27327C631861809D00FD2BB0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C621861809D00FD2BB0 /* AddressBook.framework */; };
 		27327C65186180AC00FD2BB0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C64186180AC00FD2BB0 /* CoreTelephony.framework */; };
@@ -75,6 +73,8 @@
 		27327C6A1861812200FD2BB0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C691861812200FD2BB0 /* libz.dylib */; };
 		27327C6B1861813400FD2BB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C2618617B5500FD2BB0 /* MessageUI.framework */; };
 		27327C6D1861814000FD2BB0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C6C1861814000FD2BB0 /* AssetsLibrary.framework */; };
+		88EC14A71861A68700581A6E /* NdComPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C5118617F8700FD2BB0 /* NdComPlatform.framework */; };
+		88EC14A81861A72D00581A6E /* NdComPlatformInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C5218617F8700FD2BB0 /* NdComPlatformInt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,8 +250,8 @@
 				27327C611861808200FD2BB0 /* AdSupport.framework in Frameworks */,
 				27327C5918617F8700FD2BB0 /* NetEngine.framework in Frameworks */,
 				27327C5718617F8700FD2BB0 /* NDJSON.framework in Frameworks */,
-				27327C5B18617F8700FD2BB0 /* NdComPlatformInt.framework in Frameworks */,
-				27327C5F1861803A00FD2BB0 /* NdComPlatform.framework in Frameworks */,
+				88EC14A71861A68700581A6E /* NdComPlatform.framework in Frameworks */,
+				88EC14A81861A72D00581A6E /* NdComPlatformInt.framework in Frameworks */,
 				27327C3A18617EE100FD2BB0 /* CoreGraphics.framework in Frameworks */,
 				27327C5518617F8700FD2BB0 /* Encrypt.framework in Frameworks */,
 				27327C3B18617EE100FD2BB0 /* UIKit.framework in Frameworks */,
@@ -1008,8 +1008,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5/framework",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
+					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5/framework",
+					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
+					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
@@ -1027,8 +1028,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5/framework",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
+					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5/framework",
+					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
+					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
