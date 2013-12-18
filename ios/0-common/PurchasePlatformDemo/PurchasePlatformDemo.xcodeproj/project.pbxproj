@@ -47,6 +47,34 @@
 		27327C2718617B5500FD2BB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C2618617B5500FD2BB0 /* MessageUI.framework */; };
 		27327C2F18617BA800FD2BB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C2E18617BA800FD2BB0 /* Security.framework */; };
 		27327C3118617BB400FD2BB0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C3018617BB400FD2BB0 /* SystemConfiguration.framework */; };
+		27327C3518617EE100FD2BB0 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2721832A18603E3700BC350D /* ViewController.mm */; };
+		27327C3618617EE100FD2BB0 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2721832418603E3700BC350D /* AppDelegate.mm */; };
+		27327C3718617EE100FD2BB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2721832018603E3700BC350D /* main.m */; };
+		27327C3A18617EE100FD2BB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2721831618603E3700BC350D /* CoreGraphics.framework */; };
+		27327C3B18617EE100FD2BB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2721831818603E3700BC350D /* UIKit.framework */; };
+		27327C3C18617EE100FD2BB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2721831418603E3700BC350D /* Foundation.framework */; };
+		27327C3E18617EE100FD2BB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2721832C18603E3700BC350D /* Images.xcassets */; };
+		27327C3F18617EE100FD2BB0 /* PurchasePlatformDemo_pp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 272183A518613AAE00BC350D /* PurchasePlatformDemo_pp-Info.plist */; };
+		27327C4018617EE100FD2BB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2721831D18603E3700BC350D /* InfoPlist.strings */; };
+		27327C4118617EE100FD2BB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2721832618603E3700BC350D /* Main.storyboard */; };
+		27327C5418617F8700FD2BB0 /* ATSMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C4B18617F8700FD2BB0 /* ATSMS.framework */; };
+		27327C5518617F8700FD2BB0 /* Encrypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C4C18617F8700FD2BB0 /* Encrypt.framework */; };
+		27327C5618617F8700FD2BB0 /* Log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C4D18617F8700FD2BB0 /* Log.framework */; };
+		27327C5718617F8700FD2BB0 /* NDJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C4E18617F8700FD2BB0 /* NDJSON.framework */; };
+		27327C5818617F8700FD2BB0 /* NDUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C4F18617F8700FD2BB0 /* NDUtility.framework */; };
+		27327C5918617F8700FD2BB0 /* NetEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C5018617F8700FD2BB0 /* NetEngine.framework */; };
+		27327C5B18617F8700FD2BB0 /* NdComPlatformInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C5218617F8700FD2BB0 /* NdComPlatformInt.framework */; };
+		27327C5C18617F8700FD2BB0 /* NdComPlatform_SNS_Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 27327C5318617F8700FD2BB0 /* NdComPlatform_SNS_Resources.bundle */; };
+		27327C5E18617FE300FD2BB0 /* PurchasePlatformAdapter91.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27327C5D18617FE300FD2BB0 /* PurchasePlatformAdapter91.mm */; };
+		27327C5F1861803A00FD2BB0 /* NdComPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C5118617F8700FD2BB0 /* NdComPlatform.framework */; };
+		27327C611861808200FD2BB0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C601861808200FD2BB0 /* AdSupport.framework */; };
+		27327C631861809D00FD2BB0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C621861809D00FD2BB0 /* AddressBook.framework */; };
+		27327C65186180AC00FD2BB0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C64186180AC00FD2BB0 /* CoreTelephony.framework */; };
+		27327C66186180C200FD2BB0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C3018617BB400FD2BB0 /* SystemConfiguration.framework */; };
+		27327C681861811B00FD2BB0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C671861811B00FD2BB0 /* libsqlite3.dylib */; };
+		27327C6A1861812200FD2BB0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C691861812200FD2BB0 /* libz.dylib */; };
+		27327C6B1861813400FD2BB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C2618617B5500FD2BB0 /* MessageUI.framework */; };
+		27327C6D1861814000FD2BB0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27327C6C1861814000FD2BB0 /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +180,23 @@
 		27327C2618617B5500FD2BB0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		27327C2E18617BA800FD2BB0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		27327C3018617BB400FD2BB0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		27327C4518617EE100FD2BB0 /* PurchasePlatformDemo_91.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PurchasePlatformDemo_91.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27327C4B18617F8700FD2BB0 /* ATSMS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATSMS.framework; sourceTree = "<group>"; };
+		27327C4C18617F8700FD2BB0 /* Encrypt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Encrypt.framework; sourceTree = "<group>"; };
+		27327C4D18617F8700FD2BB0 /* Log.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Log.framework; sourceTree = "<group>"; };
+		27327C4E18617F8700FD2BB0 /* NDJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NDJSON.framework; sourceTree = "<group>"; };
+		27327C4F18617F8700FD2BB0 /* NDUtility.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NDUtility.framework; sourceTree = "<group>"; };
+		27327C5018617F8700FD2BB0 /* NetEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetEngine.framework; sourceTree = "<group>"; };
+		27327C5118617F8700FD2BB0 /* NdComPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NdComPlatform.framework; sourceTree = "<group>"; };
+		27327C5218617F8700FD2BB0 /* NdComPlatformInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NdComPlatformInt.framework; sourceTree = "<group>"; };
+		27327C5318617F8700FD2BB0 /* NdComPlatform_SNS_Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NdComPlatform_SNS_Resources.bundle; sourceTree = "<group>"; };
+		27327C5D18617FE300FD2BB0 /* PurchasePlatformAdapter91.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PurchasePlatformAdapter91.mm; sourceTree = "<group>"; };
+		27327C601861808200FD2BB0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		27327C621861809D00FD2BB0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		27327C64186180AC00FD2BB0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		27327C671861811B00FD2BB0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		27327C691861812200FD2BB0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		27327C6C1861814000FD2BB0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +236,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27327C3918617EE100FD2BB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27327C6D1861814000FD2BB0 /* AssetsLibrary.framework in Frameworks */,
+				27327C6B1861813400FD2BB0 /* MessageUI.framework in Frameworks */,
+				27327C6A1861812200FD2BB0 /* libz.dylib in Frameworks */,
+				27327C681861811B00FD2BB0 /* libsqlite3.dylib in Frameworks */,
+				27327C66186180C200FD2BB0 /* SystemConfiguration.framework in Frameworks */,
+				27327C65186180AC00FD2BB0 /* CoreTelephony.framework in Frameworks */,
+				27327C631861809D00FD2BB0 /* AddressBook.framework in Frameworks */,
+				27327C611861808200FD2BB0 /* AdSupport.framework in Frameworks */,
+				27327C5918617F8700FD2BB0 /* NetEngine.framework in Frameworks */,
+				27327C5718617F8700FD2BB0 /* NDJSON.framework in Frameworks */,
+				27327C5B18617F8700FD2BB0 /* NdComPlatformInt.framework in Frameworks */,
+				27327C5F1861803A00FD2BB0 /* NdComPlatform.framework in Frameworks */,
+				27327C3A18617EE100FD2BB0 /* CoreGraphics.framework in Frameworks */,
+				27327C5518617F8700FD2BB0 /* Encrypt.framework in Frameworks */,
+				27327C3B18617EE100FD2BB0 /* UIKit.framework in Frameworks */,
+				27327C3C18617EE100FD2BB0 /* Foundation.framework in Frameworks */,
+				27327C5818617F8700FD2BB0 /* NDUtility.framework in Frameworks */,
+				27327C5418617F8700FD2BB0 /* ATSMS.framework in Frameworks */,
+				27327C5618617F8700FD2BB0 /* Log.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -211,6 +282,7 @@
 				2721831118603E3700BC350D /* PurchasePlatformDemo.app */,
 				272183641861369600BC350D /* PurchasePlatformDemo_pp.app */,
 				27327BF2186148C600FD2BB0 /* PurchasePlatformDemo_tb.app */,
+				27327C4518617EE100FD2BB0 /* PurchasePlatformDemo_91.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,6 +290,12 @@
 		2721831318603E3700BC350D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27327C6C1861814000FD2BB0 /* AssetsLibrary.framework */,
+				27327C691861812200FD2BB0 /* libz.dylib */,
+				27327C671861811B00FD2BB0 /* libsqlite3.dylib */,
+				27327C64186180AC00FD2BB0 /* CoreTelephony.framework */,
+				27327C621861809D00FD2BB0 /* AddressBook.framework */,
+				27327C601861808200FD2BB0 /* AdSupport.framework */,
 				27327C3018617BB400FD2BB0 /* SystemConfiguration.framework */,
 				27327C2E18617BA800FD2BB0 /* Security.framework */,
 				27327C2618617B5500FD2BB0 /* MessageUI.framework */,
@@ -260,6 +338,7 @@
 			children = (
 				2721834A1860424700BC350D /* PurchasePlatformAdapter.h */,
 				2721834B1860425900BC350D /* PurchasePlatformAdapterStub.cpp */,
+				27327C5D18617FE300FD2BB0 /* PurchasePlatformAdapter91.mm */,
 				27327C2418614A8700FD2BB0 /* PurchasePlatformAdapterTb.mm */,
 				272183681861386D00BC350D /* PurchasePlatformAdapterPP.mm */,
 			);
@@ -270,6 +349,7 @@
 		2721836A1861388000BC350D /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				27327C4718617F8700FD2BB0 /* 1-91 */,
 				27327BF418614A5200FD2BB0 /* 2-tb */,
 				2721836B186138A100BC350D /* 3-pp */,
 			);
@@ -432,6 +512,47 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		27327C4718617F8700FD2BB0 /* 1-91 */ = {
+			isa = PBXGroup;
+			children = (
+				27327C4818617F8700FD2BB0 /* SDK */,
+			);
+			name = "1-91";
+			path = "../../1-91";
+			sourceTree = "<group>";
+		};
+		27327C4818617F8700FD2BB0 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				27327C4918617F8700FD2BB0 /* framework5 */,
+				27327C5318617F8700FD2BB0 /* NdComPlatform_SNS_Resources.bundle */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		27327C4918617F8700FD2BB0 /* framework5 */ = {
+			isa = PBXGroup;
+			children = (
+				27327C4A18617F8700FD2BB0 /* framework */,
+				27327C5118617F8700FD2BB0 /* NdComPlatform.framework */,
+				27327C5218617F8700FD2BB0 /* NdComPlatformInt.framework */,
+			);
+			path = framework5;
+			sourceTree = "<group>";
+		};
+		27327C4A18617F8700FD2BB0 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				27327C4B18617F8700FD2BB0 /* ATSMS.framework */,
+				27327C4C18617F8700FD2BB0 /* Encrypt.framework */,
+				27327C4D18617F8700FD2BB0 /* Log.framework */,
+				27327C4E18617F8700FD2BB0 /* NDJSON.framework */,
+				27327C4F18617F8700FD2BB0 /* NDUtility.framework */,
+				27327C5018617F8700FD2BB0 /* NetEngine.framework */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,6 +607,23 @@
 			productReference = 27327BF2186148C600FD2BB0 /* PurchasePlatformDemo_tb.app */;
 			productType = "com.apple.product-type.application";
 		};
+		27327C3318617EE100FD2BB0 /* PurchasePlatformDemo_91 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27327C4218617EE100FD2BB0 /* Build configuration list for PBXNativeTarget "PurchasePlatformDemo_91" */;
+			buildPhases = (
+				27327C3418617EE100FD2BB0 /* Sources */,
+				27327C3918617EE100FD2BB0 /* Frameworks */,
+				27327C3D18617EE100FD2BB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PurchasePlatformDemo_91;
+			productName = PurchasePlatformDemo;
+			productReference = 27327C4518617EE100FD2BB0 /* PurchasePlatformDemo_91.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -519,6 +657,7 @@
 			projectRoot = "";
 			targets = (
 				2721831018603E3700BC350D /* PurchasePlatformDemo */,
+				27327C3318617EE100FD2BB0 /* PurchasePlatformDemo_91 */,
 				27327BE0186148C600FD2BB0 /* PurchasePlatformDemo_tb */,
 				272183531861369600BC350D /* PurchasePlatformDemo_pp */,
 			);
@@ -577,6 +716,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27327C3D18617EE100FD2BB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27327C3E18617EE100FD2BB0 /* Images.xcassets in Resources */,
+				27327C3F18617EE100FD2BB0 /* PurchasePlatformDemo_pp-Info.plist in Resources */,
+				27327C4018617EE100FD2BB0 /* InfoPlist.strings in Resources */,
+				27327C4118617EE100FD2BB0 /* Main.storyboard in Resources */,
+				27327C5C18617F8700FD2BB0 /* NdComPlatform_SNS_Resources.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -610,6 +761,17 @@
 				27327BE3186148C600FD2BB0 /* AppDelegate.mm in Sources */,
 				27327BE4186148C600FD2BB0 /* main.m in Sources */,
 				27327C2518614A8700FD2BB0 /* PurchasePlatformAdapterTb.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27327C3418617EE100FD2BB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27327C5E18617FE300FD2BB0 /* PurchasePlatformAdapter91.mm in Sources */,
+				27327C3518617EE100FD2BB0 /* ViewController.mm in Sources */,
+				27327C3618617EE100FD2BB0 /* AppDelegate.mm in Sources */,
+				27327C3718617EE100FD2BB0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,6 +1001,44 @@
 			};
 			name = Release;
 		};
+		27327C4318617EE100FD2BB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5/framework",
+					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
+				INFOPLIST_FILE = "PurchasePlatformDemo/PurchasePlatformDemo_91-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = PurchasePlatformDemo_91;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		27327C4418617EE100FD2BB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5/framework",
+					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
+				INFOPLIST_FILE = "PurchasePlatformDemo/PurchasePlatformDemo_91-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = PurchasePlatformDemo_91;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -874,6 +1074,15 @@
 			buildConfigurations = (
 				27327BF0186148C600FD2BB0 /* Debug */,
 				27327BF1186148C600FD2BB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27327C4218617EE100FD2BB0 /* Build configuration list for PBXNativeTarget "PurchasePlatformDemo_91" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27327C4318617EE100FD2BB0 /* Debug */,
+				27327C4418617EE100FD2BB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
