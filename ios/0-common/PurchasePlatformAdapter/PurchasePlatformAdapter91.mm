@@ -14,6 +14,41 @@ using std::endl;
 
 #import <NdComPlatform/NdComPlatform.h>
 
+#pragma mark -
+#pragma PurchasePlatformNotificationReceiver
+
+@interface PurchasePlatformNotificationReceiver : NSObject
+
++ (PurchasePlatformNotificationReceiver *)instance;
+
+@end
+
+@implementation PurchasePlatformNotificationReceiver
+
++ (PurchasePlatformNotificationReceiver *)instance
+{
+    static PurchasePlatformNotificationReceiver *receiver = nil;
+    
+    if (receiver == nil)
+    {
+        receiver = [[PurchasePlatformNotificationReceiver alloc] init];
+    }
+    
+    return receiver;
+}
+
+- (id)init
+{
+    self = [super init];
+    
+    return self;
+}
+
+@end
+
+#pragma mark -
+#pragma PurchasePlatformAdapter
+
 void PurchasePlatformAdapter::initial()
 {
     cout << "PurchasePlatformAdapter::initial()" << endl;
@@ -24,6 +59,8 @@ void PurchasePlatformAdapter::initial()
     //这里以竖屏演示下orientation的设置，默认的为空表示不设置
     cfg.orientation = UIInterfaceOrientationPortrait;
 	[[NdComPlatform defaultPlatform] NdInit:cfg];
+    
+    [[NdComPlatform defaultPlatform] NdSetDebugMode:0];
 }
 
 void PurchasePlatformAdapter::login()
