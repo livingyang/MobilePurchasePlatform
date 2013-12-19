@@ -14,6 +14,10 @@ using std::endl;
 
 #import <NdComPlatform/NdComPlatform.h>
 
+
+static int APP_ID = 102328;
+static NSString *APP_KEY = @"f686c38a3d50f4f91aa6289908a81b8f6662cef0d901af32";
+
 #pragma mark -
 #pragma mark PurchasePlatformNotificationReceiver
 
@@ -76,7 +80,13 @@ using std::endl;
     {
         PurchasePlatformDictionary dic;
         dic["platform"] = "91";
+        
         PurchasePlatformAdapter::instance()->getDelegate()->onLogin(dic);
+        
+        // 将登陆信息发送服务器
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/api/loginUser?userId=%@&platform=91&sessionId=%@&appId=%d&appKey=%@", [NdComPlatform defaultPlatform].loginUin, [NdComPlatform defaultPlatform].sessionId, APP_ID, APP_KEY]]];
+        
+        [request ]
     }
 }
 
@@ -101,8 +111,9 @@ void PurchasePlatformAdapter::initial()
     [PurchasePlatformNotificationReceiver instance];
     
     NdInitConfigure *cfg = [[NdInitConfigure alloc] init];
-	cfg.appid = 102328;
-	cfg.appKey = @"f686c38a3d50f4f91aa6289908a81b8f6662cef0d901af32";
+	cfg.appid = APP_ID;
+	cfg.appKey = APP_KEY;
+    
     //这里以竖屏演示下orientation的设置，默认的为空表示不设置
     cfg.orientation = UIInterfaceOrientationPortrait;
 	[[NdComPlatform defaultPlatform] NdInit:cfg];
@@ -138,7 +149,7 @@ void PurchasePlatformAdapter::purchase(std::string productId)
 {
     // 测试代码，注意订单号必须由服务器生成
     // 另外所有的支付参数最好也是由服务器传过来的
-    [[NdComPlatform defaultPlatform] NdUniPayForCoin:@"3" needPayCoins:1 payDescription:@"test"];
+    [[NdComPlatform defaultPlatform] NdUniPayForCoin:@"4" needPayCoins:1 payDescription:@"test"];
 }
 
 void PurchasePlatformAdapter::openCenter()

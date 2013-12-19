@@ -10,3 +10,5 @@ preserve-inputs
 coffeescript
 reststop2
 http
+bootstrap-3
+crypto-md5

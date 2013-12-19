@@ -1,5 +1,7 @@
 {
   "packages": {
-    "reststop2": {}
+    "reststop2": {},
+    "bootstrap-3": {},
+    "crypto-md5": {}
   }
 }

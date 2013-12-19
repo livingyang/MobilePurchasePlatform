@@ -1,13 +1,53 @@
 <head>
-  <title>meteor</title>
+	<title>meteor</title>
 </head>
 
 <body>
-  {{> hello}}
+	{{> hello}}
 </body>
 
 <template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+	<h1>Hello World!</h1>
+	{{greeting}}
+	<input id="addDocument" type="button" value="Add" />
+	<input id="cleanDocuments" type="button" value="Clean" />
+
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">最近登陆的用户</div>
+				<div class="panel-body">
+				{{#each platformUsers}}
+					<div class="well">
+					{{> platformUser}}
+					<a class="btn btn-info btnVertify">验证</a>
+					</div>
+				{{/each}}
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">最近20笔订单</div>
+				<div class="panel-body">
+				{{#each platformUsers}}
+				{{> platformUser}}
+				{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="displayDocument">
+	<p>document: {{document}}</p>
+	<p>time: {{time}}</p>
+</template>
+
+<template name="platformUser">
+	<span class="label label-primary">userId: {{userId}}</span>
+	<span class="label label-primary">platform: {{platform}}</span>
+	<span class="label label-primary">sessionId: {{sessionId}}</span>
+	<span class="label label-primary">appId: {{appId}}</span>
+	<span class="label label-primary">appKey: {{appKey}}</span>
 </template>
