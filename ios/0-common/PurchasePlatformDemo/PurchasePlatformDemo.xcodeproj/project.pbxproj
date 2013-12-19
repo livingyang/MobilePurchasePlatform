@@ -919,15 +919,14 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/3-pp",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/3-pp/SDKDEMO/SDKDEMO",
+					"$(SRCROOT)/../../3-pp",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
 				INFOPLIST_FILE = "PurchasePlatformDemo/PurchasePlatformDemo_pp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/3-pp",
+					"$(SRCROOT)/../../3-pp",
 				);
 				PRODUCT_NAME = PurchasePlatformDemo_pp;
 				WRAPPER_EXTENSION = app;
@@ -942,15 +941,14 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/3-pp",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/3-pp/SDKDEMO/SDKDEMO",
+					"$(SRCROOT)/../../3-pp",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
 				INFOPLIST_FILE = "PurchasePlatformDemo/PurchasePlatformDemo_pp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/3-pp",
+					"$(SRCROOT)/../../3-pp",
 				);
 				PRODUCT_NAME = PurchasePlatformDemo_pp;
 				WRAPPER_EXTENSION = app;
@@ -965,7 +963,7 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/2-tb",
+					"$(SRCROOT)/../../2-tb",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
@@ -987,7 +985,7 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ZQP/Documents/GitWorkPlace/MobilePurchasePlatform/ios/2-tb",
+					"$(SRCROOT)/../../2-tb",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
@@ -1008,9 +1006,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5/framework",
-					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
-					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
+					"$(SRCROOT)/../../1-91/SDK/framework5/framework",
+					"$(SRCROOT)/../../1-91/SDK/framework5",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
@@ -1028,9 +1025,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5/framework",
-					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
-					"/Users/lihuanming/Documents/GitWorkPlace/MobilePurchasePlatform/ios/1-91/SDK/framework5",
+					"$(SRCROOT)/../../1-91/SDK/framework5/framework",
+					"$(SRCROOT)/../../1-91/SDK/framework5",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PurchasePlatformDemo/PurchasePlatformDemo-Prefix.pch";
