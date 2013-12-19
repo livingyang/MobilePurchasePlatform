@@ -13,6 +13,63 @@ using std::cout;
 using std::endl;
 
 #include <PPAppPlatformKit/PPAppPlatformKit.h>
+#pragma mark -
+#pragma mark PurchasePlatformNotificationReceiver
+
+@interface PPDelegate : NSObject <PPAppPlatformKitDelegate>
+
++ (PPDelegate *)instance;
+
+@end
+
+@implementation PPDelegate
+
++ (PPDelegate *)instance
+{
+    static PPDelegate *delegate = nil;
+    
+    if (delegate == nil)
+    {
+        delegate = [[PPDelegate alloc] init];
+    }
+    
+    return delegate;
+}
+
+- (void)ppPayResultCallBack:(PPPayResultCode)paramPPPayResultCode
+{
+    PurchasePlatformDictionary dic;
+    dic["platform"] = "pp";
+    PurchasePlatformAdapter::instance()->getDelegate()->onPurchase(dic);
+}
+
+- (void)ppVerifyingUpdatePassCallBack
+{}
+
+- (void)ppLoginStrCallBack:(NSString *)paramStrToKenKey
+{
+    PurchasePlatformDictionary dic;
+    dic["platform"] = "pp";
+    PurchasePlatformAdapter::instance()->getDelegate()->onLogin(dic);
+}
+
+- (void)ppLoginHexCallBack:(char *)paramHexToKen
+{
+    PurchasePlatformDictionary dic;
+    dic["platform"] = "pp";
+    PurchasePlatformAdapter::instance()->getDelegate()->onLogin(dic);
+}
+
+- (void)ppCloseWebViewCallBack:(PPWebViewCode)paramPPWebViewCode
+{}
+
+- (void)ppClosePageViewCallBack:(PPPageCode)paramPPPageCode
+{}
+
+- (void)ppLogOffCallBack
+{}
+
+@end
 
 // 注意，PPAppPlatformKit的初始化，要求在界面库初始化完成之后调用，具体可以看pp demo的AppDelegate代码
 void PurchasePlatformAdapter::initial()
@@ -31,6 +88,8 @@ void PurchasePlatformAdapter::initial()
     [PPUIKit setIsDeviceOrientationLandscapeRight:YES];
     [PPUIKit setIsDeviceOrientationPortrait:YES];
     [PPUIKit setIsDeviceOrientationPortraitUpsideDown:YES];
+    
+    [PPAppPlatformKit sharedInstance].delegate = [PPDelegate instance];
     
     NSLog(@"bundle id: %@", [[NSBundle mainBundle] bundleIdentifier]);
 }
@@ -62,6 +121,8 @@ PurchasePlatformDictionary PurchasePlatformAdapter::getUserInfo()
 
 void PurchasePlatformAdapter::purchase(std::string productId)
 {
+    // 测试代码，注意订单号必须由服务器生成
+    // 另外所有的支付参数最好也是由服务器传过来的
     [[PPAppPlatformKit sharedInstance] exchangeGoods:1 BillNo:@"111" BillTitle:@"test" RoleId:@"0" ZoneId:0];
 }
 

@@ -97,10 +97,8 @@ using std::endl;
 
 void PurchasePlatformAdapter::initial()
 {
-    // 调用一次，注册91平台的各种通知接受
+    // 调用一次，注册接收91平台的各种通知
     [PurchasePlatformNotificationReceiver instance];
-    
-    cout << "PurchasePlatformAdapter::initial()" << endl;
     
     NdInitConfigure *cfg = [[NdInitConfigure alloc] init];
 	cfg.appid = 102328;
@@ -114,14 +112,10 @@ void PurchasePlatformAdapter::initial()
 
 void PurchasePlatformAdapter::login()
 {
-    cout << "PurchasePlatformAdapter::login()" << endl;
-    
     [[NdComPlatform defaultPlatform] NdLogin:0];
 }
 void PurchasePlatformAdapter::logout()
 {
-    cout << "PurchasePlatformAdapter::logout()" << endl;
-    
     [[NdComPlatform defaultPlatform] NdLogout:0];
 }
 bool PurchasePlatformAdapter::isLogin()
@@ -142,14 +136,12 @@ PurchasePlatformDictionary PurchasePlatformAdapter::getUserInfo()
 
 void PurchasePlatformAdapter::purchase(std::string productId)
 {
-    cout << "PurchasePlatformAdapter::purchase, productId : " << productId << endl;
-    
+    // 测试代码，注意订单号必须由服务器生成
+    // 另外所有的支付参数最好也是由服务器传过来的
     [[NdComPlatform defaultPlatform] NdUniPayForCoin:@"3" needPayCoins:1 payDescription:@"test"];
 }
 
 void PurchasePlatformAdapter::openCenter()
 {
-    cout << "PurchasePlatformAdapter::openCenter()" << endl;
-    
     [[NdComPlatform defaultPlatform] NdEnterPlatform:0];
 }

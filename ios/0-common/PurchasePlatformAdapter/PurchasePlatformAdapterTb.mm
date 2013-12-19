@@ -13,10 +13,102 @@ using std::cout;
 using std::endl;
 
 #include <TBPlatform/TBPlatform.h>
+#pragma mark -
+#pragma mark PurchasePlatformNotificationReceiver
+
+@interface PurchasePlatformNotificationReceiver : NSObject <TBBuyGoodsProtocol>
+
++ (PurchasePlatformNotificationReceiver *)instance;
+
+@end
+
+@implementation PurchasePlatformNotificationReceiver
+
++ (PurchasePlatformNotificationReceiver *)instance
+{
+    static PurchasePlatformNotificationReceiver *receiver = nil;
+    
+    if (receiver == nil)
+    {
+        receiver = [[PurchasePlatformNotificationReceiver alloc] init];
+    }
+    
+    return receiver;
+}
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onInitFinish:)
+                                                     name:kTBInitDidFinishNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onLoginFinish:)
+                                                     name:kTBLoginNotification
+                                                   object:nil];
+    }
+    
+    return self;
+}
+
+- (void)onInitFinish:(NSNotification *)aNotification
+{
+    if (PurchasePlatformAdapter::instance()->getDelegate() != NULL)
+    {
+        PurchasePlatformDictionary dic;
+        dic["platform"] = "tb";
+        PurchasePlatformAdapter::instance()->getDelegate()->onInit(dic);
+    }
+}
+
+- (void)onLoginFinish:(NSNotification *)aNotification
+{
+    if (PurchasePlatformAdapter::instance()->getDelegate() != NULL)
+    {
+        PurchasePlatformDictionary dic;
+        dic["platform"] = "tb";
+        PurchasePlatformAdapter::instance()->getDelegate()->onLogin(dic);
+    }
+}
+
+- (void)onPurchaseFinish
+{
+    PurchasePlatformDictionary dic;
+    dic["platform"] = "tb";
+    PurchasePlatformAdapter::instance()->getDelegate()->onPurchase(dic);
+}
+
+- (void)TBBuyGoodsDidSuccessWithOrder:(NSString*)order
+{
+    [self onPurchaseFinish];
+}
+
+- (void)TBBuyGoodsDidFailedWithOrder:(NSString *)order resultCode:(TB_BUYGOODS_ERROR)errorType
+{
+    [self onPurchaseFinish];
+}
+
+- (void)TBBuyGoodsDidStartRechargeWithOrder:(NSString*)order
+{
+    [self onPurchaseFinish];
+}
+
+- (void)TBBuyGoodsDidCancelByUser:(NSString *)order
+{
+    [self onPurchaseFinish];
+}
+
+@end
+
 
 void PurchasePlatformAdapter::initial()
 {
-    cout << "PurchasePlatformAdapter::initial()" << endl;
+    // 调用一次，注册接收91平台的各种通知
+    [PurchasePlatformNotificationReceiver instance];
     
     [[TBPlatform defaultPlatform] TBInitPlatformWithAppID:100000
                                         screenOrientation:UIInterfaceOrientationPortrait
@@ -25,16 +117,14 @@ void PurchasePlatformAdapter::initial()
 
 void PurchasePlatformAdapter::login()
 {
-    cout << "PurchasePlatformAdapter::login()" << endl;
-    
     [[TBPlatform defaultPlatform] TBLogin:0];
 }
+
 void PurchasePlatformAdapter::logout()
 {
-    cout << "PurchasePlatformAdapter::logout()" << endl;
-    
     [[TBPlatform defaultPlatform] TBLogout:0];
 }
+
 bool PurchasePlatformAdapter::isLogin()
 {
     return [[TBPlatform defaultPlatform] isLogined];
@@ -54,17 +144,15 @@ PurchasePlatformDictionary PurchasePlatformAdapter::getUserInfo()
 
 void PurchasePlatformAdapter::purchase(std::string productId)
 {
-    cout << "PurchasePlatformAdapter::purchase, productId : " << productId << endl;
-    
+    // 测试代码，注意订单号必须由服务器生成
+    // 另外所有的支付参数最好也是由服务器传过来的
     [[TBPlatform defaultPlatform] TBUniPayForCoin:[NSString stringWithUTF8String:productId.c_str()]
                                        needPayRMB:1
                                    payDescription:@"test"
-                                         delegate:nil];
+                                         delegate:[PurchasePlatformNotificationReceiver instance]];
 }
 
 void PurchasePlatformAdapter::openCenter()
 {
-    cout << "PurchasePlatformAdapter::openCenter()" << endl;
-    
     [[TBPlatform defaultPlatform] TBEnterUserCenter:0];
 }
