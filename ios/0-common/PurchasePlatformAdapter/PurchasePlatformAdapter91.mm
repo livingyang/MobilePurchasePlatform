@@ -15,7 +15,7 @@ using std::endl;
 #import <NdComPlatform/NdComPlatform.h>
 
 #pragma mark -
-#pragma PurchasePlatformNotificationReceiver
+#pragma mark PurchasePlatformNotificationReceiver
 
 @interface PurchasePlatformNotificationReceiver : NSObject
 
@@ -41,16 +41,65 @@ using std::endl;
 {
     self = [super init];
     
+    if (self != nil)
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onInitFinish:)
+                                                     name:kNdCPInitDidFinishNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onLoginFinish:)
+                                                     name:kNdCPLoginNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(onPurchaseFinish:)
+                                                     name:kNdCPBuyResultNotification
+                                                   object:nil];
+    }
+    
     return self;
+}
+
+- (void)onInitFinish:(NSNotification *)aNotification
+{
+    if (PurchasePlatformAdapter::instance()->getDelegate() != NULL)
+    {
+        PurchasePlatformDictionary dic;
+        dic["platform"] = "91";
+        PurchasePlatformAdapter::instance()->getDelegate()->onInit(dic);
+    }
+}
+
+- (void)onLoginFinish:(NSNotification *)aNotification
+{
+    if (PurchasePlatformAdapter::instance()->getDelegate() != NULL)
+    {
+        PurchasePlatformDictionary dic;
+        dic["platform"] = "91";
+        PurchasePlatformAdapter::instance()->getDelegate()->onLogin(dic);
+    }
+}
+
+- (void)onPurchaseFinish:(NSNotification *)aNotification
+{
+    if (PurchasePlatformAdapter::instance()->getDelegate() != NULL)
+    {
+        PurchasePlatformDictionary dic;
+        dic["platform"] = "91";
+        PurchasePlatformAdapter::instance()->getDelegate()->onPurchase(dic);
+    }
 }
 
 @end
 
 #pragma mark -
-#pragma PurchasePlatformAdapter
+#pragma mark PurchasePlatformAdapter
 
 void PurchasePlatformAdapter::initial()
 {
+    // 调用一次，注册91平台的各种通知接受
+    [PurchasePlatformNotificationReceiver instance];
+    
     cout << "PurchasePlatformAdapter::initial()" << endl;
     
     NdInitConfigure *cfg = [[NdInitConfigure alloc] init];

@@ -14,25 +14,29 @@ class PurchasePlatformSimpleDelegate : public PurchasePlatformDelegate
 public:
     virtual void onInit(PurchasePlatformDictionary params)
     {
-        NSLog(@"PurchasePlatformSimpleDelegate#onInit, params: %s", PurchasePlatformAdapter::getDictionaryString(params).c_str());
+        [[[UIAlertView alloc] initWithTitle:@"onInit"
+                                    message:[NSString stringWithFormat:@"%s", PurchasePlatformAdapter::getDictionaryString(params).c_str()]
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
     }
     
-    virtual void onLoginSuccess(PurchasePlatformDictionary params)
+    virtual void onLogin(PurchasePlatformDictionary params)
     {
-        NSLog(@"PurchasePlatformSimpleDelegate#onLoginSuccess, params: %s", PurchasePlatformAdapter::getDictionaryString(params).c_str());
-    }
-    virtual void onLoginFail(PurchasePlatformDictionary params)
-    {
-        NSLog(@"PurchasePlatformSimpleDelegate#onLoginFail, params: %s", PurchasePlatformAdapter::getDictionaryString(params).c_str());
+        [[[UIAlertView alloc] initWithTitle:@"onLogin"
+                                    message:[NSString stringWithFormat:@"%s", PurchasePlatformAdapter::getDictionaryString(params).c_str()]
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
     }
     
-    virtual void onPurchaseSuccess(PurchasePlatformDictionary params)
+    virtual void onPurchase(PurchasePlatformDictionary params)
     {
-        NSLog(@"PurchasePlatformSimpleDelegate#onPurchaseSuccess, params: %s", PurchasePlatformAdapter::getDictionaryString(params).c_str());
-    }
-    virtual void onPurchaseFail(PurchasePlatformDictionary params)
-    {
-        NSLog(@"PurchasePlatformSimpleDelegate#onPurchaseFail, params: %s", PurchasePlatformAdapter::getDictionaryString(params).c_str());
+        [[[UIAlertView alloc] initWithTitle:@"onPurchase"
+                                    message:[NSString stringWithFormat:@"%s", PurchasePlatformAdapter::getDictionaryString(params).c_str()]
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
     }
     
     static PurchasePlatformSimpleDelegate *instance()

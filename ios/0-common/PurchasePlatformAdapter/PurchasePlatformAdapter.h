@@ -15,6 +15,7 @@
 
 typedef std::map<std::string, std::string> PurchasePlatformDictionary;
 
+// 平台接口
 struct PurchasePlatformDelegate;
 class PurchasePlatformAdapter
 {
@@ -84,15 +85,15 @@ private:
     PurchasePlatformDelegate *mDelegate;
 };
 
+
+// 处理平台事件的回调
 struct PurchasePlatformDelegate
 {
     virtual void onInit(PurchasePlatformDictionary params) = 0;
     
-    virtual void onLoginSuccess(PurchasePlatformDictionary params) = 0;
-    virtual void onLoginFail(PurchasePlatformDictionary params) = 0;
+    virtual void onLogin(PurchasePlatformDictionary params) = 0;
     
-    virtual void onPurchaseSuccess(PurchasePlatformDictionary params) = 0;
-    virtual void onPurchaseFail(PurchasePlatformDictionary params) = 0;
+    virtual void onPurchase(PurchasePlatformDictionary params) = 0;
 };
 
 #endif
