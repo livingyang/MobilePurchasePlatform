@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, assign) IBOutlet UITextField *txtLogin;
+@property (nonatomic, assign) IBOutlet UITextField *txtCreateOrder;
+
 - (IBAction)onInitialClick:(id)sender;
 
 - (IBAction)onLoginClick:(id)sender;

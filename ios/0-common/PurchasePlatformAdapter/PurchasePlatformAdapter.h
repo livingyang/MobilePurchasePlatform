@@ -70,6 +70,10 @@ public: // instance method
         return ss.str();
     }
     
+public: // url
+    std::string urlLogin;
+    std::string urlCreateOrder;
+    
 public: // delegate
     void setDelegate(PurchasePlatformDelegate *delegate)
     {

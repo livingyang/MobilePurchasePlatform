@@ -74,14 +74,14 @@ static NSString *APP_KEY = @"f686c38a3d50f4f91aa6289908a81b8f6662cef0d901af32";
     }
 }
 
-- (void)vertifyLoginUser:(NSString *)vertifyUrl
+- (void)vertifyLoginUser:(std::string)vertifyUrl
                   userId:(NSString *)userId
                 platform:(NSString *)platform
                sessionId:(NSString *)sessionId
                    appId:(int)appId
                   appKey:(NSString *)appKey
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?userId=%@&platform=91&sessionId=%@&appId=%d&appKey=%@", vertifyUrl, userId, sessionId, appId, appKey]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%s?userId=%@&platform=91&sessionId=%@&appId=%d&appKey=%@", vertifyUrl.c_str(), userId, sessionId, appId, appKey]];
     
     NSData *data = [NSData dataWithContentsOfURL:url];
     
@@ -101,9 +101,7 @@ static NSString *APP_KEY = @"f686c38a3d50f4f91aa6289908a81b8f6662cef0d901af32";
         // 将登陆信息发送服务器
         if (PurchasePlatformAdapter::instance()->isLogin())
         {
-            // NSString *vertifyUrl = @"http://localhost:3000/api/loginUser";
-            NSString *vertifyUrl = @"http://mobilepurchaseplatform.meteor.com/api/loginUser";
-            [self vertifyLoginUser:vertifyUrl
+            [self vertifyLoginUser:PurchasePlatformAdapter::instance()->urlLogin
                             userId:[NdComPlatform defaultPlatform].loginUin
                           platform:@"91"
                          sessionId:[NdComPlatform defaultPlatform].sessionId
@@ -183,10 +181,7 @@ void PurchasePlatformAdapter::purchase(std::string productId)
     // 测试代码，注意订单号必须由服务器生成
     // 另外所有的支付参数最好也是由服务器传过来的
     
-//    NSString *getOrderUrl = @"http://localhost:3000/api/createOrder";
-    NSString *getOrderUrl = @"http://mobilepurchaseplatform.meteor.com/api/createOrder";
-    
-    NSDictionary *orderDic = getOrder(getOrderUrl, [NSString stringWithFormat:@"%s", productId.c_str()]);
+    NSDictionary *orderDic = getOrder([NSString stringWithUTF8String:PurchasePlatformAdapter::instance()->urlCreateOrder.c_str()], [NSString stringWithFormat:@"%s", productId.c_str()]);
     NSLog(@"orderDic: %@", orderDic);
     
     [[NdComPlatform defaultPlatform] NdUniPayForCoin:[orderDic objectForKey:@"_id"] needPayCoins:[[orderDic objectForKey:@"price"] intValue] payDescription:[orderDic objectForKey:@"description"]];

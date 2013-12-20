@@ -77,12 +77,15 @@ public:
 
 - (IBAction)onLoginClick:(id)sender
 {
+    PurchasePlatformAdapter::instance()->urlLogin = self.txtLogin.text.UTF8String;
     PurchasePlatformAdapter::instance()->login();
 }
+
 - (IBAction)onLogoutClick:(id)sender
 {
     PurchasePlatformAdapter::instance()->logout();
 }
+
 - (IBAction)onIsLoginClick:(id)sender
 {
     bool isLogin = PurchasePlatformAdapter::instance()->isLogin();
@@ -109,6 +112,7 @@ public:
 
 - (IBAction)onPurchaseClick:(id)sender
 {
+    PurchasePlatformAdapter::instance()->urlCreateOrder = self.txtCreateOrder.text.UTF8String;
     PurchasePlatformAdapter::instance()->purchase("1");
 }
 
