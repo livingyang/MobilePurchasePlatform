@@ -18,3 +18,13 @@ RESTstop.add "loginUser", ->
 		PlatformUserCollection.loginUser @params.userId, @params.platform, @params.sessionId, @params.appId, @params.appKey
 	else
 		console.log "loginUser error, params: #{JSON.stringify @params}"
+
+RESTstop.add "createOrder", ->
+	OrderCollection.createOrder()
+
+RESTstop.add "noticeOrder", ->
+	console.log @params
+	if @params.CooOrderSerial? and 1 is OrderCollection.noticeOrder @params.CooOrderSerial
+		{"ErrorCode":"1","ErrorDesc":"vertify order success"}
+	else
+		{"ErrorCode":"0","ErrorDesc":"vertify order failed"}

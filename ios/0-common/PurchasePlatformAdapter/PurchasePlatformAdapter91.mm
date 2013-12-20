@@ -101,8 +101,8 @@ static NSString *APP_KEY = @"f686c38a3d50f4f91aa6289908a81b8f6662cef0d901af32";
         // 将登陆信息发送服务器
         if (PurchasePlatformAdapter::instance()->isLogin())
         {
-            NSString *vertifyUrl = @"http://localhost:3000/api/loginUser";
-            // NSString *vertifyUrl = @"http://mobileplatformpurchase.meteor.com/api/loginUser";
+            // NSString *vertifyUrl = @"http://localhost:3000/api/loginUser";
+            NSString *vertifyUrl = @"http://mobilepurchaseplatform.meteor.com/api/loginUser";
             [self vertifyLoginUser:vertifyUrl
                             userId:[NdComPlatform defaultPlatform].loginUin
                           platform:@"91"
@@ -127,6 +127,18 @@ static NSString *APP_KEY = @"f686c38a3d50f4f91aa6289908a81b8f6662cef0d901af32";
 
 #pragma mark -
 #pragma mark PurchasePlatformAdapter
+
+
+NSDictionary *getOrder(NSString *getOrderUrl, NSString *productId)
+{
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:getOrderUrl]];
+    
+    NSDictionary *orderDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    
+    // 打印返回数据
+    NSLog(@"%@", orderDic);
+    return orderDic;
+}
 
 void PurchasePlatformAdapter::initial()
 {
@@ -172,7 +184,14 @@ void PurchasePlatformAdapter::purchase(std::string productId)
 {
     // 测试代码，注意订单号必须由服务器生成
     // 另外所有的支付参数最好也是由服务器传过来的
-    [[NdComPlatform defaultPlatform] NdUniPayForCoin:@"4" needPayCoins:1 payDescription:@"test"];
+    
+    NSString *getOrderUrl = @"http://localhost:3000/api/createOrder";
+//    NSString *getOrderUrl = @"http://mobilepurchaseplatform.meteor.com/api/createOrder";
+    
+    NSDictionary *orderDic = getOrder(getOrderUrl, [NSString stringWithFormat:@"%s", productId.c_str()]);
+    NSLog(@"orderDic: %@", orderDic);
+    
+    [[NdComPlatform defaultPlatform] NdUniPayForCoin:[orderDic objectForKey:@"_id"] needPayCoins:[[orderDic objectForKey:@"price"] intValue] payDescription:[orderDic objectForKey:@"description"]];
 }
 
 void PurchasePlatformAdapter::openCenter()

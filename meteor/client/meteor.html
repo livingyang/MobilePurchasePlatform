@@ -12,12 +12,12 @@
 	<div class="row">
 		<div class="col-xs-6">
 			<div class="panel panel-default">
-				<div class="panel-heading">最近登陆的用户</div>
+				<div class="panel-heading">最近登陆的20个用户</div>
 				<div class="panel-body">
 				{{#each platformUsers}}
 					<div class="well">
-					{{> platformUser}}
-					<a class="btn btn-info btnVertify">验证</a>
+						{{> platformUser}}
+						<a class="btn btn-info btnVertify">验证</a>
 					</div>
 				{{/each}}
 				</div>
@@ -27,9 +27,11 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">最近20笔订单</div>
 				<div class="panel-body">
-				{{#each platformUsers}}
-				<!-- {{> platformUser}} -->
-				{{/each}}
+					{{#each orders}}
+					<div class="well">
+						{{> order}}
+					</div>
+					{{/each}}
 				</div>
 			</div>
 		</div>
@@ -47,4 +49,11 @@
 	<span class="label label-primary">sessionId: {{sessionId}}</span>
 	<span class="label label-primary">appId: {{appId}}</span>
 	<span class="label label-primary">appKey: {{appKey}}</span>
+</template>
+
+<template name="order">
+	<span class="label label-primary">orderId: {{_id}}</span>
+	<span class="label label-primary">price: {{price}}</span>
+	<span class="label label-primary">description: {{description}}</span>
+	<span class="label label-primary">isNoticed: {{isNoticed}}</span>
 </template>
