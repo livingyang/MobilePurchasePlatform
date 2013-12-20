@@ -135,8 +135,6 @@ NSDictionary *getOrder(NSString *getOrderUrl, NSString *productId)
     
     NSDictionary *orderDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
-    // 打印返回数据
-    NSLog(@"%@", orderDic);
     return orderDic;
 }
 
@@ -185,8 +183,8 @@ void PurchasePlatformAdapter::purchase(std::string productId)
     // 测试代码，注意订单号必须由服务器生成
     // 另外所有的支付参数最好也是由服务器传过来的
     
-    NSString *getOrderUrl = @"http://localhost:3000/api/createOrder";
-//    NSString *getOrderUrl = @"http://mobilepurchaseplatform.meteor.com/api/createOrder";
+//    NSString *getOrderUrl = @"http://localhost:3000/api/createOrder";
+    NSString *getOrderUrl = @"http://mobilepurchaseplatform.meteor.com/api/createOrder";
     
     NSDictionary *orderDic = getOrder(getOrderUrl, [NSString stringWithFormat:@"%s", productId.c_str()]);
     NSLog(@"orderDic: %@", orderDic);
