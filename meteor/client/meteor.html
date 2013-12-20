@@ -8,9 +8,6 @@
 
 <template name="hello">
 	<h1>Hello World!</h1>
-	{{greeting}}
-	<input id="addDocument" type="button" value="Add" />
-	<input id="cleanDocuments" type="button" value="Clean" />
 
 	<div class="row">
 		<div class="col-xs-6">
@@ -31,7 +28,7 @@
 				<div class="panel-heading">最近20笔订单</div>
 				<div class="panel-body">
 				{{#each platformUsers}}
-				{{> platformUser}}
+				<!-- {{> platformUser}} -->
 				{{/each}}
 				</div>
 			</div>

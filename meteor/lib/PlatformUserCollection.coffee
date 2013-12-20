@@ -18,8 +18,8 @@ if Meteor.isServer
 			Uin: platformUser.userId
 			SessionID: platformUser.sessionId
 		params.Sign = CryptoJS.MD5("#{params.AppId}#{params.Act}#{params.Uin}#{params.SessionID}#{platformUser.appKey}").toString()
-
-		(HTTP.get "http://service.sj.91.com/usercenter/AP.aspx", params: params).content
+		receive: JSON.parse (HTTP.get "http://service.sj.91.com/usercenter/AP.aspx", params: params).content
+		params: params
 
 	Meteor.methods "PlatformUserCollection.vertifyUser" : PlatformUserCollection.vertifyUser
 

@@ -74,6 +74,21 @@ static NSString *APP_KEY = @"f686c38a3d50f4f91aa6289908a81b8f6662cef0d901af32";
     }
 }
 
+- (void)vertifyLoginUser:(NSString *)vertifyUrl
+                  userId:(NSString *)userId
+                platform:(NSString *)platform
+               sessionId:(NSString *)sessionId
+                   appId:(int)appId
+                  appKey:(NSString *)appKey
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?userId=%@&platform=91&sessionId=%@&appId=%d&appKey=%@", vertifyUrl, userId, sessionId, appId, appKey]];
+    
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    
+    // 打印返回数据
+    NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+}
+
 - (void)onLoginFinish:(NSNotification *)aNotification
 {
     if (PurchasePlatformAdapter::instance()->getDelegate() != NULL)
@@ -84,9 +99,17 @@ static NSString *APP_KEY = @"f686c38a3d50f4f91aa6289908a81b8f6662cef0d901af32";
         PurchasePlatformAdapter::instance()->getDelegate()->onLogin(dic);
         
         // 将登陆信息发送服务器
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:3000/api/loginUser?userId=%@&platform=91&sessionId=%@&appId=%d&appKey=%@", [NdComPlatform defaultPlatform].loginUin, [NdComPlatform defaultPlatform].sessionId, APP_ID, APP_KEY]]];
-        
-        [request ]
+        if (PurchasePlatformAdapter::instance()->isLogin())
+        {
+            NSString *vertifyUrl = @"http://localhost:3000/api/loginUser";
+            // NSString *vertifyUrl = @"http://mobileplatformpurchase.meteor.com/api/loginUser";
+            [self vertifyLoginUser:vertifyUrl
+                            userId:[NdComPlatform defaultPlatform].loginUin
+                          platform:@"91"
+                         sessionId:[NdComPlatform defaultPlatform].sessionId
+                             appId:APP_ID
+                            appKey:APP_KEY];
+        }
     }
 }
 
