@@ -55,5 +55,7 @@
 	<span class="label label-primary">orderId: {{_id}}</span>
 	<span class="label label-primary">price: {{price}}</span>
 	<span class="label label-primary">description: {{description}}</span>
-	<span class="label label-primary">isNoticed: {{isNoticed}}</span>
+	{{#if isNoticed}}
+	<h3><span class="label  label-success">Vertify Succeed</span></h3>
+	{{/if}}
 </template>
